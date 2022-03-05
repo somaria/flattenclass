@@ -18,16 +18,16 @@ interface flatProps {
 }
 
 const arrayOne: Props[] = [
-  { name: 'john', month: 'jan', answers: [{ emotion: 4 }, { emotion: 5 }] },
-  { name: 'mike', month: 'feb', answers: [{ emotion: 4 }, { emotion: 5 }] },
-  { name: 'jake', month: 'feb', answers: [{ emotion: 4 }, { emotion: 5 }] },
+  { name: 'john', month: 'jan', answers: [{ emotion: 8 }, { emotion: 1 }] },
+  { name: 'mike', month: 'feb', answers: [{ emotion: 9 }, { emotion: 3 }] },
+  { name: 'mike', month: 'feb', answers: [{ emotion: 6 }, { emotion: 2 }] },
+  { name: 'jake', month: 'feb', answers: [{ emotion: 9 }, { emotion: 4 }] },
 ]
 
 let arrayTwo: flatProps[] = []
 
 const App = () => {
   useEffect(() => {
-    console.log(arrayOne)
     arrayOne.map((item) =>
       arrayTwo.push({
         name: item.name,
@@ -36,6 +36,7 @@ const App = () => {
       })
     )
     console.log(arrayTwo)
+    console.log(_.groupBy(arrayOne, 'month'))
   }, [])
 
   return <div>React Typescript</div>
