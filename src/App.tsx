@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import _ from 'lodash'
 
+import { Dictionary } from './InterfaceTypes'
+
 interface firstProps {
   name: string
   month: string
@@ -26,13 +28,6 @@ interface flatProps {
 
 let arrayTwo: flatProps[] = []
 
-interface groupProps {
-  inmonth: [{ name: string; month: string; answers: answerProps[] }]
-}
-
-interface Dictionary<T> {
-  [Key: string]: T
-}
 
 const App = () => {
   useEffect(() => {
